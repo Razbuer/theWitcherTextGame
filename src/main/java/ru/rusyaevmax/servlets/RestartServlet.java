@@ -11,7 +11,7 @@ import java.io.IOException;
 @WebServlet(value = "/restart")
 public class RestartServlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().invalidate();
 
         req.setCharacterEncoding("UTF-8");

@@ -30,7 +30,7 @@
 
     <br>
 
-    <form action="logic" method="get">
+    <form action="logic" method="post">
         <c:forEach var="choice" items="<%= choices %>">
             <input type="submit" name="choice" value="${choice.getTextLink()}">
         </c:forEach>

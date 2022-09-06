@@ -2,17 +2,17 @@ package ru.rusyaevmax.servlets;
 
 import ru.rusyaevmax.entity.Game;
 import ru.rusyaevmax.utils.GetIP;
+import ru.rusyaevmax.utils.ReadCookies;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Optional;
 
 @WebServlet(value = "/start")
 public class InitServlet extends HttpServlet {
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         HttpSession currentSession = req.getSession(true);
 
         req.setCharacterEncoding("UTF-8");
@@ -20,21 +20,22 @@ public class InitServlet extends HttpServlet {
 
         Game game = Game.getInstance();
 
-        Cookie ip = new Cookie("ip", GetIP.getClientIpAddress(req));
-        resp.addCookie(ip);
+        resp.addCookie(new Cookie("ip", GetIP.getClientIpAddress(req)));
 
-        int countGame = 1;
-        if (req.getCookies() != null && req.getCookies().length > 0) {
-            Optional<Cookie> countGameOptional = Arrays.stream(req.getCookies()).filter(x -> x.getName().equals("countGame")).findFirst();
-            countGame = countGameOptional.map(cookie -> Integer.parseInt(cookie.getValue())).orElse(0);
-        }
-        Cookie countGameCookie = new Cookie("countGame", ++countGame + "");
-        resp.addCookie(countGameCookie);
+        String countGameString = ReadCookies.getValue(req, "countGame");
+        int countGame = countGameString.equals("") ? 0 : Integer.parseInt(countGameString);
+        resp.addCookie(new Cookie("countGame", ++countGame + ""));
 
         String playerName = req.getParameter("playerName");
-        Cookie playerNameCookie = new Cookie("playerName", playerName);
-        resp.addCookie(playerNameCookie);
+        resp.addCookie(new Cookie("playerName", playerName));
 
-        resp.sendRedirect("/logic?choice=start");
+        String currentParagraph = ReadCookies.getValue(req, "currentParagraph");
+        resp.addCookie(new Cookie("currentParagraph", currentParagraph.equals("") ? "start" : currentParagraph));
+
+        // Если пользователь перешёл на главную страницу будучи в игровом процессе (имя героя есть в куках)
+        if (!ReadCookies.getValue(req, playerName).equals(""))
+            getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        else
+            resp.sendRedirect("/logic");
     }
 }

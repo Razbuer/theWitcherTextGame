@@ -58,6 +58,20 @@ body {
     -o-background-size: cover;
     -khtml-background-size: cover;
     background-size: cover;
+	font-family: sans-serif;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+}
+
+input, button {
+	padding: 10px 20px;
+	font-size: 20px;
+	margin: 5px 20px 10px;
+	background-color: #6e594d;
+	color: #f1f1f1;
+	border: none;
+	cursor: pointer;
 }
 
 .wrapper {
@@ -86,5 +100,4 @@ footer#footer {
 footer#footer * {
 	font-size: 20px;
 	padding: 5px 20px;
-	margin-bottom: 20px;
 }

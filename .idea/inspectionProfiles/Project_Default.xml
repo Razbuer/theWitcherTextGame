@@ -17,6 +17,7 @@
       <option name="customHeaders">
         <set>
           <option value="data" />
+          <option value="currentParagraph" />
         </set>
       </option>
     </inspection_tool>
