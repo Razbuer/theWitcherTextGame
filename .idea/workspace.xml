@@ -9,15 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e471d589-01ac-4dec-8991-b57c89fcf9c2" name="Changes" comment="text and style">
-      <change afterPath="$PROJECT_DIR$/src/main/test/java/InitServletTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/java/LogicServletTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/java/RestartServletTest.java" afterDir="false" />
+    <list default="true" id="e471d589-01ac-4dec-8991-b57c89fcf9c2" name="Changes" comment="added tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/rusyaevmax/servlets/InitServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/rusyaevmax/servlets/InitServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/rusyaevmax/servlets/LogicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/rusyaevmax/servlets/LogicServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/rusyaevmax/servlets/RestartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/rusyaevmax/servlets/RestartServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +68,7 @@
       <recent name="D:\Studies\Java\IdeaProjects\theWitcherTextGame\src\main\webapp\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RestartServletTest.restartShouldInvokeInvalidateSession">
+  <component name="RunManager" selected="Tomcat Server.Tomcat">
     <configuration name="InitServletTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="theWitcherTextGame" />
       <option name="PACKAGE_NAME" value="" />
@@ -242,7 +235,7 @@
       <workItem from="1662312388313" duration="7033000" />
       <workItem from="1662370288200" duration="18448000" />
       <workItem from="1662400017242" duration="18871000" />
-      <workItem from="1662467596586" duration="33799000" />
+      <workItem from="1662467596586" duration="34173000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1662488844047</created>
@@ -265,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662502670890</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added tests">
+      <created>1662511675768</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662511675768</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +285,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <MESSAGE value="text and style" />
-    <option name="LAST_COMMIT_MESSAGE" value="text and style" />
+    <MESSAGE value="added tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tests" />
   </component>
 </project>
