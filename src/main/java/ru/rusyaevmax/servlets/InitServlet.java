@@ -33,9 +33,10 @@ public class InitServlet extends HttpServlet {
         resp.addCookie(new Cookie("currentParagraph", currentParagraph.equals("") ? "start" : currentParagraph));
 
         // Если пользователь перешёл на главную страницу будучи в игровом процессе (имя героя есть в куках)
-        if (!ReadCookies.getValue(req, playerName).equals(""))
-            getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+        if (!ReadCookies.getValue(req, "playerName").equals(""))
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
         else
             resp.sendRedirect("/logic");
+
     }
 }

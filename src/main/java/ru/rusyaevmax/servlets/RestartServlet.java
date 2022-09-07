@@ -1,6 +1,5 @@
 package ru.rusyaevmax.servlets;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +10,7 @@ import java.io.IOException;
 @WebServlet(value = "/restart")
 public class RestartServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         req.getSession().invalidate();
 
         req.setCharacterEncoding("UTF-8");

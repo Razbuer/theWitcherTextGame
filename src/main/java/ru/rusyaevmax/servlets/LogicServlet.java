@@ -36,6 +36,6 @@ public class LogicServlet extends HttpServlet {
 
         resp.addCookie(new Cookie("currentParagraph", URLEncoder.encode(currentParagraph.getTextLink(), StandardCharsets.UTF_8)));
 
-        getServletContext().getRequestDispatcher("/other.jsp").forward(req, resp);
+        req.getRequestDispatcher("/other.jsp").forward(req, resp);
     }
 }
